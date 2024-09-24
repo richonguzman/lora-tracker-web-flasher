@@ -1,3 +1,3 @@
 # LoRa iGate WebFlasher
 
-[# LoRa iGate WebFlasher](https://richonguzman.github.io/lora-igate-web-flasher/installer.html)
+[# LoRa Tracker WebFlasher](https://richonguzman.github.io/lora-tracker-web-flasher/installer.html)
