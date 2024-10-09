@@ -2,4 +2,4 @@
 
 [LoRa Tracker WebFlasher](https://richonguzman.github.io/lora-tracker-web-flasher/installer.html)
 
-( from [LoRa_APRS_Tracker](https://github.com/richonguzman/LoRa_APRS_Tracker) repository )
+( for [LoRa_APRS_Tracker](https://github.com/richonguzman/LoRa_APRS_Tracker) repository )
