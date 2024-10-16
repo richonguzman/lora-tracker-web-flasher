@@ -82,6 +82,7 @@
                                     <option>ttgo_t_deck_plus</option>
                                     <option>ttgo_t_deck_GPS</option>
                                     <option>ttgo-t-beam-v0_7</option>
+                                    <option>RAK_WisBlock_4631_GPS</option>
                                     <option>heltec_wireless_tracker</option>
                                     <option>heltec_wifi_lora_32_v3_GPS</option>
                                     <option>heltec_wifi_lora_32_v3_TNC</option>
@@ -102,8 +103,7 @@
                                     <option>Wemos_ESP32_Bat_LoRa_GPS</option>                                    
                                     <option>esp32_c3_DIY_LoRa_GPS</option>
                                     <option>esp32_c3_DIY_LoRa_GPS_915</option>                                    
-                                    <option>heltec_ht-ct62_GPS</option>
-                                    <option>RAK_WisBlock_4631_GPS</option>
+                                    <option>heltec_ht-ct62_GPS</option>                                    
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -190,6 +190,11 @@
                 const version = document.getElementById("version").value;
                 const board = document.getElementById("board").value;
                 const type = document.getElementById("type").value;
+
+                if (board === "RAK_WisBlock_4631_GPS") {
+                    window.location.href = "https://github.com/richonguzman/LoRa_APRS_NRF52840/LoRa_APRS_RAK4631_Tracker";
+                    return;
+                }
 
                 const manifest =
                     "/lora-tracker-web-flasher/manifests/" +
