@@ -73,13 +73,14 @@
                                 >
                                 <select id="board" class="form-select">
                                     <optgroup label="LILYGO TTGO">
-                                        <option value="ttgo-t-beam-v1">T-Beam V1.0 (433MHz)</option>
-                                        <option value="ttgo-t-beam-v1_915">T-Beam V1.0 (915MHz)</option>                                        
-                                        <option value="ttgo-t-beam-v1_SX1268">T-Beam V1.0 SX1268</option>                                        
                                         <option value="ttgo-t-beam-v1_2">T-Beam V1.2 (433MHz)</option>                                        
                                         <option value="ttgo-t-beam-v1_2_915">T-Beam V1.2 (915MHz)</option>                                        
                                         <option value="ttgo-t-beam-v1_2_SX1262">T-Beam V1.2 SX1262</option>
                                         <option value="ttgo_t_beam_s3_SUPREME_v3">T-Beam SUPREME V3</option>
+                                        <option value="ttgo-t-beam-v1">T-Beam V1.0/1.1 (433MHz)</option>
+                                        <option value="ttgo-t-beam-v1_915">T-Beam V1.0/1.1 (915MHz)</option>                                        
+                                        <option value="ttgo-t-beam-v1_SX1268">T-Beam V1.0/1.1 SX1268</option>
+                                        <option value="ttgo_t_echo">T-Echo</option>
                                         <option value="ttgo_t_deck_plus">T-Deck Plus</option>
                                         <option value="ttgo_t_deck_GPS">T-Deck + GPS (DIY)</option>
                                         <option value="ttgo-t-lora32-v2_1_GPS">LoRa32 V2.1/1.6.1 + GPS (DIY) (433MHz)</option>
@@ -90,10 +91,11 @@
                                     </optgroup>
                                     <optgroup label="HELTEC Automation">
                                         <option value="heltec_wireless_tracker">Heltec Wireless Tracker</option>
-                                        <option value="heltec_wifi_lora_32_v3_GPS">Heltec V3 + GPS (DIY)</option>
-                                        <option value="heltec_wifi_lora_32_v3_TNC">Heltec V3 TNC</option>
+                                        <option value="heltec_meshnode_t114">Heltec MeshNode T114 Tracker</option>
                                         <option value="heltec_wifi_lora_32_v3_2_GPS">Heltec V3.2 + GPS (DIY)</option>
                                         <option value="heltec_wifi_lora_32_v3_2_TNC">Heltec V3.2 TNC</option>
+                                        <option value="heltec_wifi_lora_32_v3_GPS">Heltec V3 + GPS (DIY)</option>
+                                        <option value="heltec_wifi_lora_32_v3_TNC">Heltec V3 TNC</option>                                        
                                         <option value="heltec-lora32-v2_GPS">Heltec V2 + GPS (DIY) (433MHz)</option>
                                         <option value="heltec-lora32-v2_GPS_915">Heltec V2 + GPS (DIY) (915MHz)</option>
                                         <option value="heltec_ht-ct62_GPS">Heltec HT-CT62 + GPS (DIY)</option>                                                                       
@@ -213,6 +215,15 @@
                     window.location.href = "https://github.com/richonguzman/LoRa_APRS_NRF52840/tree/main/LoRa_APRS_RAK4631_Tracker";
                     return;
                 }
+                if (board === "heltec_meshnode_t114") {
+                    window.location.href = "https://github.com/richonguzman/LoRa_APRS_NRF52840/tree/main/LoRa_APRS_HELTEC_MeshNode_T114_Tracker";
+                    return;
+                }
+                if (board === "ttgo_t_echo") {
+                    window.location.href = "https://github.com/richonguzman/LoRa_APRS_NRF52840/tree/main/LoRa_APRS_Tracker_T_Echo";
+                    return;
+                }
+                
 
                 const manifest =
                     "/lora-tracker-web-flasher/manifests/" +
