@@ -5,6 +5,10 @@
     "builds": [
         {
             "chipFamily": "ESP32-S3",
+            "baud": 460800,
+            "flash_mode": "qio",
+            "flash_freq": "80m",
+            "flash_size": "16MB",            
             "parts": [
                 {
                     "path": "/lora-tracker-web-flasher/bins/V2.4.3/ttgo-t-beam-1W/web_factory.bin",
