@@ -86,7 +86,7 @@
                                         <option value="ttgo-t-beam-v1">T-Beam V1.0/1.1 (433MHz)</option>
                                         <option value="ttgo-t-beam-v1_915">T-Beam V1.0/1.1 (915MHz)</option>                                        
                                         <option value="ttgo-t-beam-v1_SX1268">T-Beam V1.0/1.1 SX1268</option>
-                                        <option value="ttgo_t_echo">T-Echo</option>
+                                        <option value="ttgo_t_echo">NRF52840-> T-Echo</option>
                                         <option value="ttgo_t_deck_plus">T-Deck Plus</option>
                                         <option value="ttgo_t_deck_GPS">T-Deck + GPS (DIY)</option>
                                         <option value="ttgo-t-lora32-v2_1_GPS">LoRa32 V2.1/1.6.1 + GPS (DIY) (433MHz)</option>
@@ -97,7 +97,9 @@
                                     </optgroup>
                                     <optgroup label="HELTEC Automation">
                                         <option value="heltec_wireless_tracker">Heltec Wireless Tracker</option>
-                                        <option value="heltec_meshnode_t114">Heltec MeshNode T114 Tracker</option>
+                                        <option value="Heltec_MeshNode_t114_Tracker">NRF52840-> Heltec MeshNode T114 Tracker</option>
+                                        <option value="Heltec_MeshNode_t114_TNC">NRF52840-> Heltec MeshNode T114 TNC</option>
+                                        <option value="Heltec_MeshPocket_TNC">NRF52840-> Heltec MeshPocket TNC</option>
                                         <option value="heltec_wifi_lora_32_v3_2_GPS">Heltec V3.2 + GPS (DIY)</option>
                                         <option value="heltec_wifi_lora_32_v3_2_TNC">Heltec V3.2 TNC</option>
                                         <option value="heltec_wifi_lora_32_v3_GPS">Heltec V3 + GPS (DIY)</option>
@@ -110,14 +112,26 @@
                                         <option value="QRPLabs_LightTracker_Plus_1_0">LightTracker Plus 1.0</option>
                                     </optgroup>
                                     <optgroup label="RAK Wireless">
-                                        <option value="RAK_WisBlock_4631_GPS">RAK4631 + RAK19007/19003 + RAK12500</option>
+                                        <option value="RAK_WisBlock_4631_GPS">NRF52840-> RAK4631 + RAK19007 + RAK12501 Tracker</option>
+                                        <option value="RAK_WisBlock_4631_TNC">NRF52840-> RAK4631 + RAK19007 TNC</option>
                                     </optgroup>
+                                    <optgroup label="Elecrow">
+                                        <option value="ThinkNode_M1">NRF52840-> ThinkNode M1</option>
+                                    </optgroup>
+                                    <optgroup label="MTools Tec">
+                                        <option value="GAT562_Pro">NRF52840-> GAT562 Pro</option>
+                                    </optgroup>                                    
                                     <optgroup label="RPC Electronics">
                                         <option value="RPC_Electronics_1W_LoRa_GPS">RPC Electronics 1W + GPS</option>
                                     </optgroup>
                                     <optgroup label="Other DIY ESP32 Based Boards">
+                                        <option value="Faketec_Tracker">NRF52840-> FakeTec V3/4/5 Tracker + GPS</option>
+                                        <option value="Faketec_TNC">NRF52840-> FakeTec V3/4/5 TNC</option>
+                                        <option value="MiniMesh_Lite_NRF">NRF52840-> MiniMesh Lite NRF (TA2DMX)</option>
                                         <option value="F4GOH_1W_LoRa_Tracker">F4GOH - ESP32 + E22 Ebyte 400M30S(SX1268) + GPS (433MHz)</option>
                                         <option value="F4GOH_1W_LoRa_Tracker_LLCC68">F4GOH - ESP32 + E220 Ebyte 400M30S(LLCC68) + GPS (433MHz)</option>
+                                        <option value="MeshGate_Lite_V1_TNC">NRF52840-> MeshGate Lite V1 TNC (433MHz)</option>
+                                        <option value="SUI_400M22S_Tracker">NRF52840-> SUI 400M22S Tracker + GPS</option>
                                         <option value="TROY_LoRa_APRS">TROY LoRa APRS</option>
                                         <option value="OE5HWN_MeshCom">OE5HWM Board for MeshCom</option>   
                                         <option value="ESP32_DIY_LoRa_GPS">ESP32 + LoRa SX1278 + GPS (433MHz)</option>
@@ -227,14 +241,26 @@
                 const board = document.getElementById("board").value;
                 const type = document.getElementById("type").value;
 
-                if (board === "RAK_WisBlock_4631_GPS") {
-                    window.location.href = "https://github.com/richonguzman/LoRa_APRS_NRF52840/tree/main/LoRa_APRS_RAK4631_Tracker";
-                    return;
+                const boardLinks = {
+                    "RAK_WisBlock_4631_GPS": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "RAK_WisBlock_4631_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "Heltec_MeshNode_t114_Tracker": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "Heltec_MeshNode_t114_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "Heltec_MeshPocket_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "ttgo_t_echo": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "ThinkNode_M1": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "GAT562_Pro": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "Faketec_Tracker": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "Faketec_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "MiniMesh_Lite_NRF": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "SUI_400M22S_Tracker": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "MeshGate_Lite_V1_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html"
+                };
+                
+                if (boardLinks[board]) {
+                    window.location.href = boardLinks[board];
                 }
-                if (board === "heltec_meshnode_t114") {
-                    window.location.href = "https://github.com/richonguzman/LoRa_APRS_NRF52840/tree/main/LoRa_APRS_HELTEC_MeshNode_T114_Tracker";
-                    return;
-                }
+
                 if (board === "ttgo_t_echo") {
                     window.location.href = "https://github.com/richonguzman/LoRa_APRS_NRF52840/tree/main/LoRa_APRS_Tracker_T_Echo";
                     return;
