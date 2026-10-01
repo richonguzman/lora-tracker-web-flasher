@@ -179,6 +179,8 @@
                                         <option value="ttgo-t-beam-v1_915">T-Beam V1.0/1.1 (915MHz)</option>
                                         <option value="ttgo-t-beam-v1_SX1268">T-Beam V1.0/1.1 SX1268</option>
                                         <option value="ttgo_t_echo">NRF52840-> T-Echo</option>
+                                        <option value="ttgo_t_echo_plus">NRF52840-> T-Echo Plus</option>
+                                        <option value="ttgo_t_echo_card">NRF52840-> T-Echo Card</option>
                                         <option value="ttgo_t_deck_plus">T-Deck Plus</option>
                                         <option value="ttgo_t_deck_GPS">T-Deck + GPS (DIY)</option>
                                         <option value="ttgo-lora32-v21_GPS">LoRa32 V2.1/1.6.1 + GPS (DIY) (433MHz)</option>
@@ -214,28 +216,30 @@
                                     </optgroup>
                                     <optgroup label="MTools Tec">
                                         <option value="GAT562_Pro">NRF52840-> GAT562 Pro</option>
+                                        <option value="GAT562_30S">NRF52840-> GAT562 30S</option>
                                     </optgroup>
                                     <optgroup label="RPC Electronics">
                                         <option value="RPC_Electronics_1W_LoRa_GPS">RPC Electronics 1W + GPS</option>
                                         <option value="RPC_MicroTracker">RPC Electronics MicroTracker</option>
                                     </optgroup>
                                     <optgroup label="Other DIY ESP32 Based Boards">
-                                        <option value="Faketec_Tracker">NRF52840-> FakeTec V3/4/5 Tracker + GPS</option>
-                                        <option value="Faketec_TNC">NRF52840-> FakeTec V3/4/5 TNC</option>
+                                        <option value="Faketec_Tracker">NRF52840-> FakeTec V3/4/5 SX1262 Tracker + GPS</option>
+                                        <option value="Faketec_TNC">NRF52840-> FakeTec V3/4/5 SX1262 TNC</option>
+                                        <option value="Faketec_1W_400M30S_Tracker">NRF52840-> FakeTec 1W E22-400M30S Tracker + GPS</option>
                                         <option value="MiniMesh_Lite_NRF">NRF52840-> MiniMesh Lite NRF (TA2DMX)</option>
-                                        <option value="F4GOH_1W_LoRa_Tracker_E22_400M30S">F4GOH - ESP32 + E22 Ebyte 400M30S(SX1268) + GPS (433MHz)</option>
-                                        <option value="F4GOH_1W_LoRa_Tracker_E220_400M30S">F4GOH - ESP32 + E220 Ebyte 400M30S(LLCC68) + GPS (433MHz)</option>
+                                        <option value="F4GOH_1W_LoRa_Tracker_E22_400M30S">F4GOH - ESP32 + E22-400M30S (SX1268) + GPS (433MHz)</option>
+                                        <option value="F4GOH_1W_LoRa_Tracker_E220_400M30S">F4GOH - ESP32 + E220-400M30S (LLCC68) + GPS (433MHz)</option>
                                         <option value="MeshGate_Lite_V1_TNC">NRF52840-> MeshGate Lite V1 TNC (433MHz)</option>
-                                        <option value="SUI_400M22S_Tracker">NRF52840-> SUI 400M22S Tracker + GPS</option>
+                                        <option value="SUI_400M22S_Tracker">NRF52840-> SUI E22-400M22S Tracker + GPS</option>
                                         <option value="TROY_LoRa_APRS">TROY LoRa APRS</option>
-                                        <option value="OE5HWN_MeshCom">OE5HWM Board for MeshCom</option>
+                                        <option value="OE5HWN_MeshCom">OE5HWN Board for MeshCom</option>
                                         <option value="ESP32_DIY_LoRa_SX1278_GPS">ESP32 + LoRa SX1278 + GPS (433MHz)</option>
                                         <option value="ESP32_DIY_LoRa_915_SX1276_GPS">ESP32 + LoRa SX1276 + GPS (915MHz)</option>
                                         <option value="ESP32S3_DIY_LoRa_SX1278_GPS">ESP32S3 + LoRa SX1278 + GPS (433MHz)</option>
                                         <option value="ESP32S3_DIY_LoRa_915_SX1276_GPS">ESP32S3 + LoRa SX1276 + GPS (915MHz)</option>
-                                        <option value="ESP32_DIY_1W_LoRa_E22_400M30S_GPS">ESP32 + E22 Ebyte 400M30S + GPS (433MHz)</option>
-                                        <option value="ESP32_DIY_1W_LoRa_915_E22_900M30S_GPS">ESP32 + E22 Ebyte 900M30S + GPS (915MHz)</option>
-                                        <option value="ESP32_DIY_1W_LoRa_E220_400M30S_GPS">ESP32 + E220 Ebyte 400M30S(LLCC68) + GPS</option>
+                                        <option value="ESP32_DIY_1W_LoRa_E22_400M30S_GPS">ESP32 + E22-400M30S + GPS (433MHz)</option>
+                                        <option value="ESP32_DIY_1W_LoRa_915_E22_900M30S_GPS">ESP32 + E22-900M30S + GPS (915MHz)</option>
+                                        <option value="ESP32_DIY_1W_LoRa_E220_400M30S_GPS">ESP32 + E220-400M30S (LLCC68) + GPS</option>
                                         <option value="ESP32C3_SuperMini_DIY_LoRa_SX1278_GPS">ESP32C3 SuperMini + LoRa SX1278 + GPS (433MHz)</option>
                                         <option value="ESP32C3_SuperMini_DIY_LoRa_915_SX1276_GPS">ESP32C3 SuperMini + LoRa SX1276 + GPS (915MHz)</option>
                                         <option value="WEMOS_ESP32_Bat_DIY_LoRa_SX1278_GPS">WEMOS ESP32 Bat + LoRa SX1278 + GPS (433MHz)</option>
@@ -352,7 +356,11 @@
                     "Faketec_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html",
                     "MiniMesh_Lite_NRF": "https://richonguzman.github.io/nrf52840-web-config/index.html",
                     "SUI_400M22S_Tracker": "https://richonguzman.github.io/nrf52840-web-config/index.html",
-                    "MeshGate_Lite_V1_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html"
+                    "MeshGate_Lite_V1_TNC": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "ttgo_t_echo_plus": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "ttgo_t_echo_card": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "GAT562_30S": "https://richonguzman.github.io/nrf52840-web-config/index.html",
+                    "Faketec_1W_400M30S_Tracker": "https://richonguzman.github.io/nrf52840-web-config/index.html"
                 };
 
                 if (boardLinks[board]) {
