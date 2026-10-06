@@ -178,6 +178,7 @@
                                         <option value="ttgo-t-beam-v1">T-Beam V1.0/1.1 (433MHz)</option>
                                         <option value="ttgo-t-beam-v1_915">T-Beam V1.0/1.1 (915MHz)</option>
                                         <option value="ttgo-t-beam-v1_SX1268">T-Beam V1.0/1.1 SX1268</option>
+                                        <option value="ttgo-t-beam-v1_SX1262">T-Beam V1.0/1.1 SX1262</option>
                                         <option value="ttgo_t_echo">NRF52840-> T-Echo</option>
                                         <option value="ttgo_t_echo_plus">NRF52840-> T-Echo Plus</option>
                                         <option value="ttgo_t_echo_card">NRF52840-> T-Echo Card</option>
@@ -203,6 +204,7 @@
                                         <option value="heltec-lora32-v2_915_GPS">Heltec V2 + GPS (DIY) (915MHz)</option>
                                         <option value="heltec_ht-ct62_GPS">Heltec HT-CT62 + GPS (DIY)</option>
                                         <option value="heltec_wireless_stick_lite_v3_display_GPS">Heltec Wireless Stick Lite V3/3.2 with Display + GPS (DIY)</option>
+                                        <option value="heltec_wireless_stick_lite_v3_TNC">Heltec Wireless Stick Lite V3/3.2 TNC</option>
                                     </optgroup>
                                     <optgroup label="QRP Labs">
                                         <option value="QRPLabs_LightTracker_Plus_1_0">LightTracker Plus 1.0</option>
@@ -229,6 +231,7 @@
                                         <option value="MiniMesh_Lite_NRF">NRF52840-> MiniMesh Lite NRF (TA2DMX)</option>
                                         <option value="F4GOH_1W_LoRa_Tracker_E22_400M30S">F4GOH - ESP32 + E22-400M30S (SX1268) + GPS (433MHz)</option>
                                         <option value="F4GOH_1W_LoRa_Tracker_E220_400M30S">F4GOH - ESP32 + E220-400M30S (LLCC68) + GPS (433MHz)</option>
+                                        <option value="Hydra_1W_LoRa_E22_400M30S_GPS">Hydra - ESP32 + E22-400M30S + GPS (433MHz)</option>
                                         <option value="MeshGate_Lite_V1_TNC">NRF52840-> MeshGate Lite V1 TNC (433MHz)</option>
                                         <option value="SUI_400M22S_Tracker">NRF52840-> SUI E22-400M22S Tracker + GPS</option>
                                         <option value="TROY_LoRa_APRS">TROY LoRa APRS</option>
@@ -252,6 +255,7 @@
                                 >
                                 <select id="version" class="form-select">
                                     <optgroup label="Available">
+                                        <option value="V4.0.1">V4.0.1 (06 October 2026)</option>
                                         <option value="V4.0">V4.0 (30 September 2026)</option>
                                         <option value="V2.4.3.2">V2.4.3.2 (22 April 2026)</option>
                                         <option value="V2.4.2">V2.4.2 (20 January 2026)</option>
@@ -405,19 +409,28 @@
                     "WEMOS_ESP32_Bat_DIY_LoRa_SX1278_GPS":      "Wemos_ESP32_Bat_LoRa_GPS",
                     "heltec_wireless_stick_lite_v3_display_GPS":"heltec_wireless_stick_lite_v3_GPS_display"
                 };
-                // Boards that only exist from V4.0 on
-                const newBoardsSinceV40 = ["RPC_MicroTracker"];
+                // Boards that only exist from a given version on (first version with that board)
+                const boardFirstVersion = {
+                    "RPC_MicroTracker":                     "V4.0",
+                    "ttgo-t-beam-v1_SX1262":                "V4.0.1",
+                    "heltec_wireless_stick_lite_v3_TNC":    "V4.0.1",
+                    "Hydra_1W_LoRa_E22_400M30S_GPS":        "V4.0.1"
+                };
                 const versionOptions    = [...document.getElementById("version").options].map(o => o.value);
+                const firstVersion      = boardFirstVersion[board];
+                if (firstVersion) {
+                    const firstVersionIndex = versionOptions.indexOf(firstVersion);
+                    if (firstVersionIndex === -1 || versionOptions.indexOf(version) > firstVersionIndex) {   // list is newest first
+                        alert("This board is available from firmware " + firstVersion + " onwards.");
+                        if (firstVersionIndex !== -1) {     // switch only once that version is published in the version list
+                            document.getElementById("version").value = firstVersion;
+                            return reload();
+                        }
+                        return;
+                    }
+                }
                 const firstRenamedIndex = versionOptions.indexOf("V4.0");
                 const isOlderThanV40    = firstRenamedIndex === -1 || versionOptions.indexOf(version) > firstRenamedIndex;   // list is newest first
-                if (isOlderThanV40 && newBoardsSinceV40.includes(board)) {
-                    alert("This board is available from firmware V4.0 onwards.");
-                    if (firstRenamedIndex !== -1) {         // switch only once V4.0 is published in the version list
-                        document.getElementById("version").value = "V4.0";
-                        return reload();
-                    }
-                    return;
-                }
                 const boardFolder       = (isOlderThanV40 && legacyBoardNames[board]) ? legacyBoardNames[board] : board;
 
                 const manifest =
