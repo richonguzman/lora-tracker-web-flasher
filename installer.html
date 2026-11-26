@@ -175,6 +175,7 @@
                                         <option value="ttgo-t-beam-v1_2_SX1262">T-Beam V1.2 SX1262</option>
                                         <option value="ttgo_t_beam_s3_SUPREME_v3">T-Beam SUPREME V3</option>
                                         <option value="ttgo-t-beam-1W">T-Beam 1W</option>
+                                        <option value="ttgo-t-beam-BPF">T-Beam BPF (144-148MHz)</option>
                                         <option value="ttgo-t-beam-v1">T-Beam V1.0/1.1 (433MHz)</option>
                                         <option value="ttgo-t-beam-v1_915">T-Beam V1.0/1.1 (915MHz)</option>
                                         <option value="ttgo-t-beam-v1_SX1268">T-Beam V1.0/1.1 SX1268</option>
@@ -255,6 +256,7 @@
                                 >
                                 <select id="version" class="form-select">
                                     <optgroup label="Available">
+                                        <option value="V4.0.2">V4.0.2 (26 November 2026)</option>
                                         <option value="V4.0.1">V4.0.1 (06 October 2026)</option>
                                         <option value="V4.0">V4.0 (30 September 2026)</option>
                                         <option value="V2.4.3.2">V2.4.3.2 (22 April 2026)</option>
@@ -414,7 +416,8 @@
                     "RPC_MicroTracker":                     "V4.0",
                     "ttgo-t-beam-v1_SX1262":                "V4.0.1",
                     "heltec_wireless_stick_lite_v3_TNC":    "V4.0.1",
-                    "Hydra_1W_LoRa_E22_400M30S_GPS":        "V4.0.1"
+                    "Hydra_1W_LoRa_E22_400M30S_GPS":        "V4.0.1",
+                    "ttgo-t-beam-BPF":                      "V4.0.2"
                 };
                 const versionOptions    = [...document.getElementById("version").options].map(o => o.value);
                 const firstVersion      = boardFirstVersion[board];
